@@ -99,15 +99,13 @@ nav ul li:hover {
 .main {
     height: 100vh;
     width: 100vw;
-   background-image:url("https://cdn.sanity.io/images/ocl5w36p/prod3/88e4891831f4b1634681cbd0ea3fcbb626a34aa6-1820x660.jpg?w=1280&format=auto&dpr=2");
+    background-image: url("https://cdn.sanity.io/images/ocl5w36p/prod3/88e4891831f4b1634681cbd0ea3fcbb626a34aa6-1820x660.jpg?w=1280&format=auto&dpr=2");
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 80px;
     position: relative;
     overflow: hidden;
-    
-    
 }
 
 #left {
@@ -164,14 +162,66 @@ nav ul li:hover {
     box-shadow: 0 8px 20px rgba(255, 107, 53, 0.6);
 }
 
-#right {
-    width: 450px;
-    height: 450px;
-    background: url("https://i.pinimg.com/474x/a7/28/dc/a728dcc514452b59c76191d19142a893.jpg") no-repeat center center/cover;
-    border-radius: 50%;
-    border: 6px solid rgba(255, 107, 53, 0.4);
-    box-shadow: 0 0 40px rgba(255, 107, 53, 0.3);
-    animation: fadeInRight 1.2s ease;
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center content vertically */
+        padding: 0 20px; /* Reduce padding for smaller screens */
+        text-align: center; /* Center-align text */
+    }
+
+    #left {
+        max-width: 100%; /* Full width on phones */
+        padding: 30px; /* Reduce padding */
+        border-radius: 15px; /* Slightly smaller border radius */
+        margin: 20px 0; /* Add vertical spacing */
+    }
+
+    #left h4 {
+        font-size: 18px; /* Smaller font size */
+        margin-bottom: 15px; /* Reduced margin */
+        letter-spacing: 1px; /* Slightly less spacing */
+    }
+
+    #left h1 {
+        font-size: 36px; /* Reduced heading size */
+        line-height: 1.2; /* Adjusted line height */
+        margin: 8px 0; /* Reduced margin */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Softer shadow */
+    }
+
+    #left h3 {
+        font-size: 22px; /* Smaller subheading */
+        margin-bottom: 25px; /* Reduced margin */
+    }
+
+    #left button {
+        padding: 12px 30px; /* Smaller button padding */
+        font-size: 15px; /* Smaller font */
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4); /* Softer shadow */
+    }
+
+    #left button:hover {
+        transform: scale(1.05); /* Slightly less scaling on hover */
+        box-shadow: 0 6px 15px rgba(255, 107, 53, 0.5); /* Adjusted shadow */
+    }
+}
+
+/* Optional: Extra small screens (below 480px) */
+@media (max-width: 480px) {
+    #left h1 {
+        font-size: 28px; /* Even smaller for tiny screens */
+    }
+
+    #left h3 {
+        font-size: 18px;
+    }
+
+    #left button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
 }
  
 /* About Section */
