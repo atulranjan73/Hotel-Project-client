@@ -94,6 +94,11 @@ nav ul li:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
 }
+.humberger{
+color: white;
+font-size: 28px;
+display: none;
+}
 
 /* Main Section */
 .main {
@@ -164,6 +169,17 @@ nav ul li:hover {
 
 /* Responsive Design for Phones */
 @media (max-width: 768px) {
+    .humberger{
+        display: block;
+    }
+    .bookNow-btn button {
+        padding: 4px 15px;
+        font-size: 14px;
+        font-weight: 400;
+        cursor: pointer; 
+    }
+  
+  
     .main {
         flex-direction: column; /* Stack items vertically */
         justify-content: center; /* Center content vertically */
@@ -210,6 +226,7 @@ nav ul li:hover {
 
 /* Optional: Extra small screens (below 480px) */
 @media (max-width: 480px) {
+   
     #left h1 {
         font-size: 28px; /* Even smaller for tiny screens */
     }
@@ -700,14 +717,16 @@ footer .col-lg-4 p {
 @media (max-width: 768px) {
     nav { height: 70px; padding: 0 20px; }
     nav ul { display: none; } /* Add hamburger menu JS here */
-    .main { flex-direction: column; padding: 30px; height: auto; min-height: 100vh; }
+    .main { flex-direction: column; padding: 0 20px; height: auto; min-height: 80vh; }
     #left { max-width: 100%; margin: 30px 0; padding: 30px; }
     #right { width: 300px; height: 300px; }
     .header-image img { height: 300px; }
     footer iframe { height: 250px; }
+  
 }
 
 @media (max-width: 480px) {
+ 
     nav .logo h1 { font-size: 24px; }
     #left h1 { font-size: 40px; }
     #left h3 { font-size: 24px; }
