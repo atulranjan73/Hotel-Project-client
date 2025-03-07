@@ -202,11 +202,13 @@ nav ul li:hover {
         nav ul li {
             padding: 10px 20px;
             background-color:transparent;
-            width: 50%;
+            width: 70%;
+            color: tomato;
             margin-left: 2%;
-            border: 1px solid white;
+            border: 1px solid tomato;
             border-radius: 15px;
-            font-weight: 600;
+            font-weight: 800;
+            
         }
         nav ul li:hover{
             background-color:tomato; 
