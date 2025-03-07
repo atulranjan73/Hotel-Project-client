@@ -4,28 +4,27 @@ body {
     margin: 0;
     padding: 0;
     background-image: url("https://i.pinimg.com/1200x/62/b2/10/62b210bfd4d9a452e17173345381afb8.jpg");
+    background-size: cover; /* Added for better background image handling */
+    background-position: center; /* Added for better positioning */
 }
 
 .container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    max-width: 50%;
-    padding: 50px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 25px;
     text-align: left;
     animation: fadeInLeft 1.2s ease;
-    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 @keyframes fadeInLeft {
     from {
         opacity: 0;
-        transform: translateX(-60px);
+        transform: translateX(-120px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
@@ -37,7 +36,6 @@ body {
         opacity: 0;
         transform: translateX(60px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
@@ -46,8 +44,8 @@ body {
 
 h1 {
     text-align: center;
-   color: tomato;
-   text-shadow:2px 4px 8px rgb(0, 0, 0);
+    color: tomato;
+    text-shadow: 2px 4px 8px rgb(0, 0, 0);
 }
 
 .booking-form {
@@ -57,9 +55,8 @@ h1 {
 
 label {
     margin-bottom: 5px;
-    color: rgb(255, 253, 253) ; 
-
-    text-shadow:2px 4px 8px rgb(0, 0, 0);
+    color: rgb(255, 253, 253);
+    text-shadow: 2px 4px 8px rgb(0, 0, 0);
 }
 
 input[type="text"],
@@ -71,6 +68,8 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    width: 100%; /* Added for better responsiveness */
+    box-sizing: border-box; /* Added to include padding in width */
 }
 
 input[type="text"]:focus,
@@ -93,4 +92,61 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Changed from fixed 600px */
+        margin: 20px auto; /* Reduced margin */
+        padding: 15px; /* Reduced padding */
+        animation: fadeInRight 1.2s ease; /* Changed to right animation */
+    }
+
+    h1 {
+        font-size: 24px; /* Reduced font size */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+        padding: 8px; /* Slightly reduced padding */
+        font-size: 14px; /* Reduced font size */
+    }
+
+    button {
+        padding: 8px; /* Reduced padding */
+        font-size: 14px; /* Reduced font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+        padding: 6px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 6px;
+        font-size: 12px;
+    }
 }
