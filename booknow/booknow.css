@@ -1,11 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     background-image: url("https://i.pinimg.com/1200x/62/b2/10/62b210bfd4d9a452e17173345381afb8.jpg");
     background-size: cover; /* Added for better background image handling */
     background-position: center; /* Added for better positioning */
+    
 }
 
 .container {
@@ -97,10 +98,10 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        max-width: 90%; /* Changed from fixed 600px */
-        margin: 20px auto; /* Reduced margin */
-        padding: 15px; /* Reduced padding */
-        animation: fadeInRight 1.2s ease; /* Changed to right animation */
+        max-width: 90%; 
+        margin: 20px auto; 
+        padding: 15px; 
+        animation: fadeInRight 1.2s ease; 
     }
 
     h1 {
@@ -111,20 +112,20 @@ button:hover {
     input[type="email"],
     input[type="date"],
     select {
-        padding: 8px; /* Slightly reduced padding */
-        font-size: 14px; /* Reduced font size */
+        padding: 8px; 
+        font-size: 14px; 
     }
 
     button {
-        padding: 8px; /* Reduced padding */
-        font-size: 14px; /* Reduced font size */
-    }
+        padding: 8px; 
+        font-size: 14px;
+}
 }
 
 @media (max-width: 480px) {
     .container {
         max-width: 95%;
-        margin: 10px auto;
+        margin-top: 50px ;
         padding: 10px;
     }
 
