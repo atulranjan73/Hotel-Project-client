@@ -125,7 +125,8 @@ button:hover {
 
 @media (max-width: 480px) {
     .container {
-        max-width: 95%;
+    height: 100vh;
+        max-width: 80vw;
         margin-top: 50px ;
         padding: 10px;
     }
