@@ -198,7 +198,11 @@ nav ul li:hover {
     
             transform: translateX(0);
         }
-    
+        .bi-x{
+            color: tomato;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
         nav ul li {
             padding: 10px 20px;
             background-color:transparent;
