@@ -55,6 +55,9 @@ nav ul li {
     position: relative;
     transition: color 0.3s ease;
 }
+nav ul a  {
+text-decoration: none;
+}
 
 nav ul li::after {
     content: '';
@@ -104,9 +107,9 @@ nav ul li:hover {
 
 /* Main Section */
 .main {
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
-    background-image: url("https://cdn.sanity.io/images/ocl5w36p/prod3/88e4891831f4b1634681cbd0ea3fcbb626a34aa6-1820x660.jpg?w=1280&format=auto&dpr=2");
+    background-image: url("./image/1.jpg");
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -380,25 +383,25 @@ nav ul li:hover {
 
 
 /* ::::::::::services:::::::::: */
-/* Container for the services section */
 .service {
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    /* Soft gradient background */
+
     min-height: 60vh;
-    /* Full viewport height */
+   
 }
 
 /* Heading styling */
 .service h1 {
     text-align: center;
     font-size: 2.5rem;
+    text-decoration: underline;
     color: #ff6f61;
-    /* Vibrant coral */
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -410,6 +413,7 @@ nav ul li:hover {
     flex-wrap: wrap;
     gap: 25px;
     justify-content: center;
+    padding: 5px 20px;
 }
 
 /* Individual card styling */
@@ -424,7 +428,7 @@ nav ul li:hover {
     color: white;
     position: relative;
     overflow: hidden;
-    width: 300px;
+    width: 330px;
     /* Fixed width for consistency */
     height: 400px;
     /* Fixed height for uniformity */
@@ -434,8 +438,9 @@ nav ul li:hover {
 
 /* Card image */
 .card img {
-    width: 100%;
-    height: 65%;
+    width: 400px;
+    height: 200px;
+    padding: 20px;
     /* Takes up most of the card */
     object-fit: cover;
     /* Ensures image fits well */
@@ -567,6 +572,166 @@ nav ul li:hover {
 }
 
 
+
+
+
+
+
+
+
+
+
+/* ::::::::::Teams:::::::::::: */
+.teams-box {
+    padding: 35px 20px;
+    background: #f5f5f5;
+    min-height: 50vh;
+
+}
+
+/* Heading section */
+.team-box-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team-box-heading h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ff6f61;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: underline;
+}
+
+/* Teams container */
+.teams {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between team cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual team card */
+.team {
+    background: #ffffff;
+    width: 240px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.team:hover {
+    transform: translateY(-10px);
+}
+
+/* Team image container */
+.team_image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+/* Team image styling */
+.team_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Social media icons container */
+.team_socialMedia {
+    padding: 10px;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Social media icons */
+.team_socialMedia .bi {
+    border: 2px solid tomato;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team_socialMedia .bi-instagram:hover {
+    color: #E1306C;
+    border-color: #E1306C;
+}
+
+.team_socialMedia .bi-facebook:hover {
+    color: #4267B2;
+    border-color: #4267B2;
+}
+
+.team_socialMedia .bi-whatsapp:hover {
+    color: #25D366;
+    border-color: #25D366;
+}
+
+/* Name and title section */
+.name {
+    padding: 15px;
+    text-align: center;
+}
+
+.name h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+    font-family: 'Arial', sans-serif;
+}
+
+.name p {
+    font-size: 14px;
+    color: #777;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .teams {
+        gap: 20px;
+    }
+
+    .team {
+        width: 240px;
+        height: 300px;
+    }
+
+    .team-box-heading h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-box-heading h1 {
+        font-size: 24px;
+    }
+}
+
+
+
+
+
+
 /* ::::::::::carousel-container::::::::::: */
 
 .carousel-container {
@@ -627,7 +792,6 @@ footer {
     background: linear-gradient(180deg, #414b5f 0%, #0f1419 100%);
     color: #fff;
     padding: 1px 40px;
-    position: relative;
     overflow: hidden;
 }
 
@@ -888,3 +1052,6 @@ footer .col-lg-4 p {
         font-size: 24px;
     }
 }
+
+
+
