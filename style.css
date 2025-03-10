@@ -109,6 +109,7 @@ nav ul li:hover {
 .main {
     height: 95vh;
     width: 100vw;
+    background-repeat: no-repeat;
     background-image: url("./image/1.jpg");
     display: flex;
     justify-content: space-between;
