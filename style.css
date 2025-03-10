@@ -309,11 +309,22 @@ nav ul li:hover {
 }
 
 .about-header {
+    margin-top: 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+    padding: 20px;
     align-items: center;
     margin-bottom: 50px;
+}
+.gym-box{
+    
+    box-shadow: 1px 2px 4px tomato;
+  
+}
+.kichen-box{
+    box-shadow: 1px 2px 4px tomato;
+    padding: 20px;
 }
 
 .header-content h1 {
