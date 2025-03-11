@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+  }
 
 body {
 
@@ -30,6 +33,16 @@ nav {
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     transition: background 0.3s ease;
+}
+.logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.logo img{
+   width: 30px ;
+   height: 30px; 
+   
 }
 
 nav .logo h1 {
@@ -844,16 +857,30 @@ footer iframe {
 }
 
 footer .row {
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
     display: flex;
     flex-wrap: wrap;
+
     gap: 30px;
-    justify-content: space-between;
+
 }
 
 footer .col-lg-8,
 footer .col-lg-4 {
     flex: 1;
     min-width: 300px;
+}
+.footer-logo{
+    width: 30%;
+}
+.footer-logo img {
+    width: 40%;
+    text-align: center;
+}
+.footer_links{
+    display: flex;
 }
 
 footer .bg-white {
@@ -933,6 +960,45 @@ footer .col-lg-4 p {
     color: #a0aec0;
     max-width: 300px;
 }
+.contact-form {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    /* max-width: 400px; */
+}
+.contact-form h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.contact-form textarea {
+    resize: none;
+    height: 100px;
+}
+.contact-form button {
+    width: 100%;
+    padding: 2px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.contact-form button:hover {
+    background: #0056b3;
+}
 
 /* Animations */
 @keyframes fadeInLeft {
@@ -990,10 +1056,18 @@ footer .col-lg-4 p {
 
     footer .row {
         gap: 20px;
+        align-items: center;
+        justify-content: center;
+   
     }
 }
 
 @media (max-width: 768px) {
+  
+    .footer-logo img{
+    margin-left: 70px;
+
+    }
     nav {
         height: 70px;
         padding: 0 20px;
