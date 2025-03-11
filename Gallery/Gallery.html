@@ -162,7 +162,7 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="container-fluid mt-5"> -->
+      
             <div class="row">
                 <div class="col-lg-4 footer-logo">
                   <img src="../image/logo-primary.png" alt="">
@@ -171,16 +171,18 @@
                     </p>
                 </div>
             
-                <div class="col-lg-4 contact-form">
-                    <h2>Contact Us</h2>
-                    <input type="text" placeholder="Enter Your Name" required>
-                    <input type="tel" placeholder="Enter Your Phone" required>
-                    <input type="email" placeholder="Enter Your Email" required>
-                    <textarea placeholder="Enter Your Message" required></textarea>
-                    <button type="submit">Submit</button>
+                <div class="col-lg-4 contact-form"><h2>Contact Us</h2>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="6b86493d-e97a-4c0a-b169-57f93bf659a5">
+                        <input type="text" name="name" placeholder="Enter Your Name" required>
+                        <input type="tel" name="phone" placeholder="Enter Your Phone" required>
+                        <input type="email" name="email" placeholder="Enter Your Email" required>
+                        <textarea placeholder="Enter Your Message" name="message" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                    
                 </div>
             </div>
-        <!-- </div> -->
     </footer>
 
 
