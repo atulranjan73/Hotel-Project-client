@@ -322,7 +322,7 @@ nav ul li:hover {
 }
 
 .about-header {
-    margin-top: 80px;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
