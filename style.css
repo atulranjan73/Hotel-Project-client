@@ -333,6 +333,16 @@ nav ul li:hover {
     align-items: center;
     margin-bottom: 50px;
 }
+
+
+
+
+
+
+
+
+
+
 .gym-box{
     
     box-shadow: 1px 2px 4px tomato;
@@ -350,12 +360,28 @@ nav ul li:hover {
     margin-bottom: 25px;
 }
 
-.header-content p {
-    font-size: 19px;
-    color: #4a5568;
-    line-height: 1.9;
-    max-width: 95%;
+
+
+.about-description {
+    
+    font-size: .9rem;
+    color: #555;
+    text-align: left;
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.8;
+    
+    font-weight: 500;
 }
+
+.about-description::first-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+
+
 
 .header-image img {
     width: 100%;
@@ -368,6 +394,21 @@ nav ul li:hover {
 
 .header-image img:hover {
     transform: scale(1.06);
+}
+
+.about-category-heading{
+    font-size: 44px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 25px;
+
+}
+
+@media(max-width:800px){
+    .about-category-heading{
+        font-size: 32px;
+        text-align: center;
+    }
 }
 
 .features-grid {
@@ -384,7 +425,9 @@ nav ul li:hover {
     transition: all 0.4s ease;
 }
 .feature-card p{
-    padding: 0 30px;
+    
+    padding: .2rem 30px;
+
 }
 
 .feature-card:hover {
@@ -394,7 +437,7 @@ nav ul li:hover {
 
 .feature-card img {
     width: 100%;
-    height: 200px;
+    height: 40vh;
     object-fit: cover;
 }
 
@@ -404,6 +447,7 @@ nav ul li:hover {
     color: #2d3748;
     margin: 25px 30px 10px;
 }
+
 
 .feature-card .price {
     font-size: 17px;
