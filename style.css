@@ -193,16 +193,7 @@ nav ul li:hover {
 
 
 /* whatsapps-contact */
-/* Reset default margins and ensure full responsiveness */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
-}
 
 .whatsapps-contact {
     position: fixed;
@@ -216,6 +207,10 @@ body {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease; /* Smooth scaling */
+}
+.whatsapps-contact a{
+width: 40px;
+height: 40px;
 }
 
 /* Responsive sizing for smaller screens */
