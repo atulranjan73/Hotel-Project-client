@@ -319,6 +319,8 @@ nav ul li:hover {
     min-height: 60vh;
     display: flex;
     align-items: center;
+    margin-top: 30px;
+
 }
 
 .about-container {
@@ -347,7 +349,7 @@ nav ul li:hover {
 
 
 .gym-box{
-    
+    margin-top: 80px;
     box-shadow: 1px 2px 4px tomato;
   
 }
