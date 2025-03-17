@@ -168,7 +168,7 @@ nav ul li:hover {
 #left h3 {
     font-size: 30px;
     font-weight: 600;
-    color: #ff6b35;
+    color: rgb(255, 183, 0);
     margin-bottom: 35px;
 }
 
@@ -228,7 +228,7 @@ height: 40px;
         width: 40px;
         height: 40px;
         top: 85%;
-        left: 90%;
+        left: 87%;
     }
 }
 
