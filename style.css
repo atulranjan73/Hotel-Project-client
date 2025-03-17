@@ -265,11 +265,11 @@ body {
 /* Adjust close button size on smaller screens */
 @media (max-width: 480px) {
     .close-btn {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
         font-size: 12px;
         top: -6px;
-        right: -6px;
+        right: -8px;
     }
 }
 
