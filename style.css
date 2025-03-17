@@ -464,11 +464,21 @@ nav ul li:hover {
 
 }
 
-@media(max-width:800px){
+@media(max-width:930px){
     .about-category-heading{
         font-size: 32px;
         text-align: center;
     }
+    .bookNow-btn button {
+        padding: 4px 20px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .logo h1{
+        font-size: 20px;
+    }
+ 
 }
 
 .features-grid {
