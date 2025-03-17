@@ -195,8 +195,8 @@ nav ul li:hover {
 /* whatsapps-contact */
 .whatsapps-contact {
     position: fixed;
-    top: 70%;
-    left: 85%;
+    top: 90%;
+    left: 94%;
     z-index: 1000;
     cursor: grab;
     width: 60px;
@@ -237,6 +237,11 @@ nav ul li:hover {
         font-size: 12px;
         top: -6px;
         right: -15px;
+    }
+    .whatsapps-contact{
+        top: 90%;
+        left: 80%;
+
     }
 }
 
