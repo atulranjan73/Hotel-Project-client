@@ -306,7 +306,7 @@ nav ul li:hover {
     }
 
     .bookNow-btn button {
-        padding: 8px 25px;
+        padding: 10px 25px;
         font-size: 14px;
         font-weight: 400;
         cursor: pointer;
@@ -475,7 +475,7 @@ nav ul li:hover {
         text-align: center;
     }
     .bookNow-btn button {
-        padding: 4px 20px;
+        padding: 8px 20px;
         font-size: 12px;
         font-weight: 600;
         cursor: pointer;
