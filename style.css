@@ -208,10 +208,7 @@ nav ul li:hover {
     justify-content: center;
     transition: transform 0.2s ease; /* Smooth scaling */
 }
-.whatsapps-contact a{
-width: 40px;
-height: 40px;
-}
+
 
 /* Responsive sizing for smaller screens */
 @media (max-width: 768px) {
@@ -219,7 +216,7 @@ height: 40px;
         width: 60px;
         height: 60px;
         top: 80%; /* Move lower on smaller screens */
-        left: 88%;
+        left: 85%;
     }
 }
 
@@ -227,8 +224,8 @@ height: 40px;
     .whatsapps-contact {
         width: 60px;
         height: 60px;
-        top: 85%;
-        left: 87%;
+        top: 55%;
+        left: 83%;
     }
 }
 
