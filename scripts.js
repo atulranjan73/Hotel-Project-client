@@ -1,60 +1,71 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let whatsappButton = document.getElementById("whatsapp-button");
-    let whatsappLink = document.getElementById("whatsapp-link");
+    const whatsappButton = document.getElementById("whatsapp-button");
+    const whatsappLink = document.getElementById("whatsapp-link");
     let isDragging = false;
-    let offsetX, offsetY;
-    let tapTimeout;
+    let startX, startY, offsetX, offsetY;
 
-    function startDrag(e) {
-        let event = e.type.includes("touch") ? e.touches[0] : e;
-        offsetX = event.clientX - whatsappButton.getBoundingClientRect().left;
-        offsetY = event.clientY - whatsappButton.getBoundingClientRect().top;
-        isDragging = false;
+    // When mouse/touch starts
+    function startDrag(event) {
+        event.preventDefault();
+        
+        // Check if the click is on the image (so it can still open WhatsApp)
+        if (event.target.tagName === "IMG") return;
 
-        // Set a timeout to determine if it's a drag
-        tapTimeout = setTimeout(() => {
-            isDragging = true;
-            whatsappButton.style.cursor = "grabbing";
-        }, 150);
+        isDragging = true;
+        whatsappButton.style.cursor = "grabbing";
 
-        e.preventDefault(); // Prevent default behavior
+        let clientX = event.clientX || event.touches[0].clientX;
+        let clientY = event.clientY || event.touches[0].clientY;
+
+        startX = clientX;
+        startY = clientY;
+        offsetX = clientX - whatsappButton.getBoundingClientRect().left;
+        offsetY = clientY - whatsappButton.getBoundingClientRect().top;
+
+        document.addEventListener("mousemove", drag);
+        document.addEventListener("touchmove", drag);
+        document.addEventListener("mouseup", stopDrag);
+        document.addEventListener("touchend", stopDrag);
     }
 
-    function onDrag(e) {
+    // Move the button while dragging
+    function drag(event) {
         if (!isDragging) return;
-        let event = e.type.includes("touch") ? e.touches[0] : e;
-        let x = event.clientX - offsetX;
-        let y = event.clientY - offsetY;
-        whatsappButton.style.left = x + "px";
-        whatsappButton.style.top = y + "px";
+
+        let clientX = event.clientX || event.touches[0].clientX;
+        let clientY = event.clientY || event.touches[0].clientY;
+
+        let newX = clientX - offsetX;
+        let newY = clientY - offsetY;
+
+        // Prevent dragging out of viewport
+        newX = Math.max(0, Math.min(window.innerWidth - whatsappButton.clientWidth, newX));
+        newY = Math.max(0, Math.min(window.innerHeight - whatsappButton.clientHeight, newY));
+
+        whatsappButton.style.left = `${newX}px`;
+        whatsappButton.style.top = `${newY}px`;
     }
 
-    function stopDrag(e) {
-        clearTimeout(tapTimeout);
+    // Stop dragging when mouse/touch is released
+    function stopDrag(event) {
+        isDragging = false;
         whatsappButton.style.cursor = "grab";
-        isDragging = false; // Reset dragging state
+
+        // Remove event listeners to stop further movement
+        document.removeEventListener("mousemove", drag);
+        document.removeEventListener("touchmove", drag);
+        document.removeEventListener("mouseup", stopDrag);
+        document.removeEventListener("touchend", stopDrag);
     }
 
-    // Handle click event separately
-    whatsappLink.addEventListener("click", function (e) {
-        if (isDragging) {
-            e.preventDefault(); // Prevent link from opening if dragging occurred
-        }
-        // If not dragging, the link will open naturally via the <a> href
-    });
-
-    // Mouse events for dragging
+    // Add event listeners
     whatsappButton.addEventListener("mousedown", startDrag);
-    document.addEventListener("mousemove", onDrag);
-    document.addEventListener("mouseup", stopDrag);
-
-    // Touch events for dragging (mobile)
     whatsappButton.addEventListener("touchstart", startDrag);
-    document.addEventListener("touchmove", onDrag);
-    document.addEventListener("touchend", stopDrag);
-});
 
-// Hide WhatsApp button
-function hideWhatsapp() {
-    document.getElementById("whatsapp-button").style.display = "none";
-}
+    // Ensure WhatsApp opens on click
+    whatsappLink.addEventListener("click", function (event) {
+        if (isDragging) {
+            event.preventDefault(); // Prevent opening WhatsApp if the user was dragging
+        }
+    });
+});
