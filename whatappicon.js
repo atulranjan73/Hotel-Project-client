@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
     const whatsappButton = document.getElementById("whatsapp-button");
+    const whatsappLink = document.getElementById("whatsapp-link");
     let isDragging = false;
     let offsetX, offsetY;
 
-    // Prevent image from blocking clicks
+    // Prevent image blocking clicks
     document.getElementById("whatsapp-logo").addEventListener("dragstart", (event) => event.preventDefault());
 
-    // When mouse or touch starts, initialize drag
+    // Start dragging
     function startDrag(event) {
+        event.preventDefault(); // Prevent touch from scrolling the page
         isDragging = true;
-        whatsappButton.style.cursor = "grabbing"; // Change cursor to indicate dragging
+        whatsappButton.style.cursor = "grabbing";
 
         let clientX = event.clientX || event.touches[0].clientX;
         let clientY = event.clientY || event.touches[0].clientY;
@@ -17,14 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
         offsetX = clientX - whatsappButton.getBoundingClientRect().left;
         offsetY = clientY - whatsappButton.getBoundingClientRect().top;
 
-        // Add event listeners to handle dragging and stopping the drag
         document.addEventListener("mousemove", drag);
-        document.addEventListener("touchmove", drag);
+        document.addEventListener("touchmove", drag, { passive: false });
         document.addEventListener("mouseup", stopDrag);
         document.addEventListener("touchend", stopDrag);
     }
 
-    // Move the element while dragging
+    // Dragging movement
     function drag(event) {
         if (!isDragging) return;
 
@@ -35,27 +36,27 @@ document.addEventListener("DOMContentLoaded", function () {
         whatsappButton.style.top = `${clientY - offsetY}px`;
     }
 
-    // When drag ends, reset cursor and stop dragging
+    // Stop dragging
     function stopDrag() {
         isDragging = false;
-        whatsappButton.style.cursor = "grab"; // Change cursor back to grab
-
-        // Remove event listeners to stop dragging after release
+        whatsappButton.style.cursor = "grab";
         document.removeEventListener("mousemove", drag);
         document.removeEventListener("touchmove", drag);
         document.removeEventListener("mouseup", stopDrag);
         document.removeEventListener("touchend", stopDrag);
     }
 
-    // Add event listeners for mouse and touch events
-    whatsappButton.addEventListener("mousedown", startDrag);
-    whatsappButton.addEventListener("touchstart", startDrag);
+    // Fix: Prevent click inside the icon from being treated as drag
+    whatsappButton.addEventListener("mousedown", (event) => {
+        if (event.target !== whatsappLink) startDrag(event);
+    });
 
+    whatsappButton.addEventListener("touchstart", (event) => {
+        if (event.target !== whatsappLink) startDrag(event);
+    });
 
-    function hideWhatsapp() {
-        const whatsappButton = document.getElementById("whatsapp-button");
-        if (whatsappButton) {
-            whatsappButton.style.display = "none"; // Hides the button
-        }
-    }
+    // Hide WhatsApp button
+    window.hideWhatsapp = function () {
+        whatsappButton.style.display = "none";
+    };
 });
