@@ -50,4 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add event listeners for mouse and touch events
     whatsappButton.addEventListener("mousedown", startDrag);
     whatsappButton.addEventListener("touchstart", startDrag);
+
+
+    function hideWhatsapp() {
+        const whatsappButton = document.getElementById("whatsapp-button");
+        if (whatsappButton) {
+            whatsappButton.style.display = "none"; // Hides the button
+        }
+    }
 });
