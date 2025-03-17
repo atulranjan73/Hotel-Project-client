@@ -193,23 +193,55 @@ nav ul li:hover {
 
 
 /* whatsapps-contact */
+/* Reset default margins and ensure full responsiveness */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+}
+
 .whatsapps-contact {
     position: fixed;
-    top: 60vh;
-    left: 85vw; /* Adjusted to be within screen */
-    z-index: 100;
+    top: 70%; /* Relative to viewport height */
+    left: 85%; /* Relative to viewport width */
+    z-index: 1000; /* High z-index for visibility */
     cursor: grab;
-    width: 60px;
+    width: 60px; /* Default size */
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease; /* Smooth scaling */
+}
+
+/* Responsive sizing for smaller screens */
+@media (max-width: 768px) {
+    .whatsapps-contact {
+        width: 50px;
+        height: 50px;
+        top: 80%; /* Move lower on smaller screens */
+        left: 88%;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapps-contact {
+        width: 40px;
+        height: 40px;
+        top: 85%;
+        left: 90%;
+    }
 }
 
 .whatsapps-contact img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    object-fit: cover; /* Ensure image fits nicely */
 }
 
 .close-btn {
@@ -227,9 +259,26 @@ nav ul li:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none; /* Prevent text selection */
 }
 
+/* Adjust close button size on smaller screens */
+@media (max-width: 480px) {
+    .close-btn {
+        width: 16px;
+        height: 16px;
+        font-size: 12px;
+        top: -6px;
+        right: -6px;
+    }
+}
 
+/* Hover effect for desktop */
+@media (min-width: 769px) {
+    .whatsapps-contact:hover {
+        transform: scale(1.1); /* Slight zoom on hover */
+    }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .humberger {

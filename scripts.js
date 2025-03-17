@@ -1,41 +1,60 @@
-const hamburger = document.querySelector('.humberger');
-        const navMenu = document.querySelector('nav ul');
+document.addEventListener("DOMContentLoaded", function () {
+    let whatsappButton = document.getElementById("whatsapp-button");
+    let whatsappLink = document.getElementById("whatsapp-link");
+    let isDragging = false;
+    let offsetX, offsetY;
+    let tapTimeout;
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            
-            // Toggle between hamburger and close icon
-            const icon = hamburger.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.remove('bi-list');
-                icon.classList.add('bi-x');
-            } else {
-                icon.classList.remove('bi-x');
-                icon.classList.add('bi-list');
-            }
-        });
+    function startDrag(e) {
+        let event = e.type.includes("touch") ? e.touches[0] : e;
+        offsetX = event.clientX - whatsappButton.getBoundingClientRect().left;
+        offsetY = event.clientY - whatsappButton.getBoundingClientRect().top;
+        isDragging = false;
 
-        // Close menu when clicking a menu item
-        const menuItems = document.querySelectorAll('nav ul li');
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                const icon = hamburger.querySelector('i');
-                icon.classList.remove('bi-x');
-                icon.classList.add('bi-list');
-            });
-        });
+        // Set a timeout to determine if it's a drag
+        tapTimeout = setTimeout(() => {
+            isDragging = true;
+            whatsappButton.style.cursor = "grabbing";
+        }, 150);
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                const icon = hamburger.querySelector('i');
-                icon.classList.remove('bi-x');
-                icon.classList.add('bi-list');
-            }
-        });
+        e.preventDefault(); // Prevent default behavior
+    }
 
+    function onDrag(e) {
+        if (!isDragging) return;
+        let event = e.type.includes("touch") ? e.touches[0] : e;
+        let x = event.clientX - offsetX;
+        let y = event.clientY - offsetY;
+        whatsappButton.style.left = x + "px";
+        whatsappButton.style.top = y + "px";
+    }
 
+    function stopDrag(e) {
+        clearTimeout(tapTimeout);
+        whatsappButton.style.cursor = "grab";
+        isDragging = false; // Reset dragging state
+    }
 
-        
+    // Handle click event separately
+    whatsappLink.addEventListener("click", function (e) {
+        if (isDragging) {
+            e.preventDefault(); // Prevent link from opening if dragging occurred
+        }
+        // If not dragging, the link will open naturally via the <a> href
+    });
+
+    // Mouse events for dragging
+    whatsappButton.addEventListener("mousedown", startDrag);
+    document.addEventListener("mousemove", onDrag);
+    document.addEventListener("mouseup", stopDrag);
+
+    // Touch events for dragging (mobile)
+    whatsappButton.addEventListener("touchstart", startDrag);
+    document.addEventListener("touchmove", onDrag);
+    document.addEventListener("touchend", stopDrag);
+});
+
+// Hide WhatsApp button
+function hideWhatsapp() {
+    document.getElementById("whatsapp-button").style.display = "none";
+}
