@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Navbar</title>
+    <title>Hotel Quba</title>
+    <link rel="shortcut icon" href="./image/mark-01.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
@@ -37,7 +38,7 @@
             <a href="./index.html">
                 <li>Home</li>
             </a>
-            <a href="#about">
+            <a href="./About/About.html">
                 <li>About</li>
             </a>
             <a href="./Gallery/Gallery.html">
@@ -57,6 +58,15 @@
             <a href="./booknow/booknow.html"> <button>Book Now</button></a>
         </div>
     </nav>
+
+  
+    <div class="whatsapps-contact" id="whatsapp-button">
+        <span class="close-btn" onclick="hideWhatsapp()">×</span>
+        <a href="https://wa.me/917324086918" id="whatsapp-link" target="_blank">
+            <img id="whatsapp-logo" src="https://i.pinimg.com/736x/74/15/d0/7415d00f6b719e40a4b1f9a75fc7eea5.jpg" alt="WhatsApp">
+        </a>
+    </div>
+    
 
     <main class="main">
         <div id="left">
@@ -195,76 +205,26 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/1067/1067555.png" alt="Recovery">
                 <p>Advanced<br>Recovery Systems</p>
             </div>
+            <div class="usp-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="24/7 Access">
+                <p>24/7<br>Gym Access</p>
+            </div>
+            <div class="usp-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" alt="Diet Plan">
+                <p>Personalized<br>Diet Plans</p>
+            </div>
+            <div class="usp-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/2910/2910735.png" alt="Supplements">
+                <p>Quality<br>Supplements</p>
+            </div>
+            <div class="usp-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/1670/1670510.png" alt="Fitness Tracking">
+                <p>Smart<br>Fitness Tracking</p>
+            </div>
+            
         </div>
     </section>
     
-
-
-
-    
-
-
-    <!-- <div class="teams-box">
-        <div class="team-box-heading">
-            <h1>Meet Our Guide</h1>
-        </div>
-        <div class="teams">
-            <div class="team">
-                <div class="team_image"> <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIqPvX-B2IJEsSvYEqeBBdvtWx54iU0hoeCA&s"
-                        alt=""></div>
-                <div class="team_socialMedia">
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-whatsapp"></i>
-                </div>
-                <div class="name">
-                    <h2>Atul Ranjan</h2>
-                    <P>Manager</P>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team_image"> <img src="https://www.hotelierindia.com/cloud/2023/03/10/Photo.jpeg" alt="">
-                </div>
-                <div class="team_socialMedia">
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-whatsapp"></i>
-                </div>
-                <div class="name">
-                    <h2>Atul Ranjan</h2>
-                    <P>Manager</P>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team_image"> <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIqPvX-B2IJEsSvYEqeBBdvtWx54iU0hoeCA&s"
-                        alt=""></div>
-                <div class="team_socialMedia">
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-whatsapp"></i>
-                </div>
-                <div class="name">
-                    <h2>Atul Ranjan</h2>
-                    <P>Manager</P>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team_image"> <img src="https://www.hotelierindia.com/cloud/2023/03/10/Photo.jpeg" alt="">
-                </div>
-                <div class="team_socialMedia">
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-whatsapp"></i>
-                </div>
-                <div class="name">
-                    <h2>Atul Ranjan</h2>
-                    <P>Manager</P>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
 
 
@@ -363,6 +323,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="scripts.js"></script>
+<script src="whatappicon.js"></script>
 <script>
     $(document).ready(function () {
         $('.carousel').slick({

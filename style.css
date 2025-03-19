@@ -168,7 +168,7 @@ nav ul li:hover {
 #left h3 {
     font-size: 30px;
     font-weight: 600;
-    color: #ff6b35;
+    color: rgb(255, 183, 0);
     margin-bottom: 35px;
 }
 
@@ -191,6 +191,66 @@ nav ul li:hover {
     box-shadow: 0 8px 20px rgba(255, 107, 53, 0.6);
 }
 
+
+/* whatsapps-contact */
+.whatsapps-contact {
+    position: fixed;
+    top: 90%;
+    left: 94%;
+    z-index: 1000;
+    cursor: grab;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+.whatsapps-contact img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.close-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+/* Adjust close button size on smaller screens */
+@media (max-width: 480px) {
+    .close-btn {
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        top: -6px;
+        right: -15px;
+    }
+    .whatsapps-contact{
+        top: 90%;
+        left: 80%;
+
+    }
+}
+
+/* Hover effect for desktop */
+@media (min-width: 769px) {
+    .whatsapps-contact:hover {
+        transform: scale(1.1); /* Slight zoom on hover */
+    }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .humberger {
@@ -246,7 +306,7 @@ nav ul li:hover {
     }
 
     .bookNow-btn button {
-        padding: 8px 25px;
+        padding: 10px 25px;
         font-size: 14px;
         font-weight: 400;
         cursor: pointer;
@@ -319,6 +379,8 @@ nav ul li:hover {
     min-height: 60vh;
     display: flex;
     align-items: center;
+    margin-top: 30px;
+
 }
 
 .about-container {
@@ -347,7 +409,7 @@ nav ul li:hover {
 
 
 .gym-box{
-    
+    margin-top: 80px;
     box-shadow: 1px 2px 4px tomato;
   
 }
@@ -407,11 +469,21 @@ nav ul li:hover {
 
 }
 
-@media(max-width:800px){
+@media(max-width:930px){
     .about-category-heading{
         font-size: 32px;
         text-align: center;
     }
+    .bookNow-btn button {
+        padding: 8px 20px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .logo h1{
+        font-size: 20px;
+    }
+ 
 }
 
 .features-grid {
