@@ -486,18 +486,33 @@ nav ul li:hover {
  
 }
 
-.features-grid {
+.feature-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
-@media (max-width:968px){
-    .features-grid{
-        grid-template-columns: repeat(1,1fr);
+/* Medium screens (tablets) */
+@media (max-width: 1200px) {
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+        gap: 25px;
     }
-
 }
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+        gap: 20px;
+    }
+}
+
+/* Ensure cards shrink properly */
+.feature-grid > * {
+    min-width: 0; /* Allows cards to shrink if needed */
+}
+
 
 
 .feature-card {
