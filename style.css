@@ -127,7 +127,7 @@ nav ul li:hover {
 .main {
     height: 95vh;
     width: 100vw;
-    background: url("https://i.pinimg.com/1200x/fc/66/99/fc6699016e2c4080a80af9d905877d5c.jpg") no-repeat center center;
+    background: url("./image/main\ bg\ image.JPG") no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: space-between;
@@ -486,32 +486,22 @@ nav ul li:hover {
  
 }
 
-.feature-grid {
+.features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* Medium screens (tablets) */
-@media (max-width: 1200px) {
-    .feature-grid {
-        grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
-        gap: 25px;
-    }
-}
+
 
 /* Small screens (mobile) */
 @media (max-width: 768px) {
-    .feature-grid {
-        grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+    .features-grid {
+        grid-template-columns: repeat(1, 1fr); /* Keep 3 columns */
         gap: 20px;
     }
 }
 
-/* Ensure cards shrink properly */
-.feature-grid > * {
-    min-width: 0; /* Allows cards to shrink if needed */
-}
 
 
 
